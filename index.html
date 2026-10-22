@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#141414">
+<title>NETFLOVE · O Amor É Construído</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#141414;--red:#e50955;--mu:#b3b3b3}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+html,body{background:var(--bg);color:#fff;font-family:"Helvetica Neue",Arial,sans-serif}
+.d{font-family:"Bebas Neue",Impact,"Arial Narrow",sans-serif;letter-spacing:.04em;font-weight:400}
+header{position:fixed;inset:0 0 auto;z-index:5;display:flex;align-items:center;gap:28px;padding:14px 4%;background:linear-gradient(#000b,transparent)}
+.logo{color:var(--red);font-size:36px;line-height:1}
+nav{display:flex;gap:18px;font-size:14px;color:#e5e5e5}
+nav span:first-child{font-weight:700;color:#fff}
+.av{margin-left:auto;width:32px;height:32px;border-radius:4px;background:linear-gradient(135deg,#8a6fd1,#e50955);display:grid;place-items:center;font-weight:700}
+.hero{position:relative;min-height:90vh;display:flex;align-items:flex-end;padding:0 4% 9vh;overflow:hidden}
+.hero svg{position:absolute;inset:0;width:100%;height:100%}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#141414ee 0,#14141400 62%),linear-gradient(0deg,#141414 0,#14141400 38%)}
+.info{position:relative;z-index:2;max-width:560px}
+.info h1{font-size:clamp(54px,9vw,104px);line-height:.92;margin:6px 0 12px}
+.sub{font-size:15px;color:#e5e5e5;margin-bottom:10px}
+.meta{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;font-size:14px;color:var(--mu);margin-bottom:14px}
+.meta .g{color:#46d369;font-weight:700}
+.meta .b{border:1px solid #777;padding:0 6px;border-radius:2px}
+.info p{font-size:clamp(15px,1.7vw,18px);line-height:1.45;margin-bottom:20px;text-shadow:0 1px 8px #000}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{border:0;border-radius:4px;padding:11px 26px;font-size:18px;font-weight:700;cursor:pointer;background:#fff;color:#000}
+.btn.s{background:#6d6d6eb3;color:#fff}
+.btn:hover{opacity:.85}
+.row{padding:0 4% 34px}
+.row h2{font-size:20px;font-weight:600;margin-bottom:12px}
+.cards{display:flex;gap:10px;overflow-x:auto;padding:6px 0 12px}
+.c{flex:0 0 260px;height:146px;border:0;border-radius:6px;background:var(--g);position:relative;display:grid;place-items:center;font-size:46px;color:#fff;cursor:pointer;transition:transform .2s}
+.c:hover,.c:focus-visible{transform:scale(1.06);outline:2px solid #fff;z-index:2}
+.c b{position:absolute;left:12px;right:12px;bottom:10px;font-size:14px;text-align:left;text-shadow:0 1px 6px #000}
+.c small{display:block;font-weight:400;color:#e5e5e5;font-size:12px;margin-top:2px}
+.c.soon{opacity:.55;cursor:default}
+.c.soon:hover{transform:none;outline:0}
+footer{padding:10px 4% 40px;color:#777;font-size:13px}
+#pl{position:fixed;inset:0;z-index:20;background:#000;display:grid;place-items:center}
+#pl canvas{width:min(100vw,calc(100vh*16/9));height:auto;aspect-ratio:16/9;display:block}
+#cf{image-rendering:auto}
+#cap{position:absolute;left:6%;right:6%;bottom:7%;text-align:center;font-size:clamp(15px,2.4vw,28px);text-shadow:0 2px 8px #000,0 0 3px #000;pointer-events:none}
+#cap.on{animation:fi 1s both}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.ctl{position:absolute;top:14px;border:1px solid #fff6;background:#0008;color:#fff;border-radius:4px;padding:8px 14px;font-size:14px;cursor:pointer}
+#cl{right:14px}#mu{right:70px}#sk{left:14px}
+#end{position:absolute;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:20px;animation:fi 2s both}
+#end h2{font-size:clamp(40px,7vw,76px);color:var(--red)}
+#end ul{list-style:none;color:#ddd;line-height:1.8}
+#end li i{color:var(--mu);margin-left:8px}
+#end .big{font-size:clamp(18px,2.6vw,26px);margin:8px 0}
+@media(max-width:700px){nav{display:none}.hero{min-height:82vh}}
+@media(prefers-reduced-motion:reduce){.c{transition:none}}
+</style>
+</head>
+<body>
+<header><span class="logo d">NETFLOVE</span><nav><span>Início</span><span>Séries</span><span>Filmes</span><span>Bombando</span><span>Minha lista</span></nav><div class="av">E</div></header>
+
+<section class="hero">
+<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+<defs>
+<linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0f2b"/><stop offset=".7" stop-color="#3a2162"/><stop offset="1" stop-color="#8a4a7a"/></linearGradient>
+<radialGradient id="mn"><stop offset="0" stop-color="#fff6d0"/><stop offset=".5" stop-color="#fff6d055"/><stop offset="1" stop-color="#fff6d000"/></radialGradient>
+</defs>
+<rect width="1600" height="900" fill="url(#sk)"/>
+<g id="st" fill="#fff"></g>
+<circle cx="1180" cy="230" r="200" fill="url(#mn)"/><circle cx="1180" cy="230" r="72" fill="#fff6d8"/>
+<path d="M0 760 L260 520 L480 700 L760 440 L1020 700 L1250 580 L1600 780 V900H0Z" fill="#1a1236"/>
+<path d="M620 900 L1180 480 L1740 900Z" fill="#0d0a22"/>
+<g fill="#000">
+<circle cx="1158" cy="446" r="11"/><rect x="1147" y="457" width="22" height="30" rx="4"/><rect x="1149" y="485" width="8" height="22"/><rect x="1160" y="485" width="8" height="22"/>
+<circle cx="1204" cy="446" r="11"/><path d="M1192 440 h24 v34 h-6 v-20 h-12 v20 h-6z"/><path d="M1204 457 l-15 38 h30z"/>
+<rect x="1167" y="466" width="26" height="5"/>
+</g>
+<path d="M1181 410 c-8-12-24-2-14 10 l14 14 l14-14 c10-12-6-22-14-10z" fill="#e50955"/>
+</svg>
+<div class="info">
+<div class="sub">Um filme original Netflove</div>
+<h1 class="d">O Amor<br>É Construído</h1>
+<div class="meta"><span class="g">98% relevante</span><span>2026</span><span class="b">Livre</span><span>Romance · Drama · Fé</span></div>
+<p>Entre as montanhas do interior e uma tela que nunca se apagava, duas pessoas que não se conheciam começaram a conversar. Ele chegava antes do sol, com um bom-dia. Montou um vídeo com horas de cuidado, mandou um urso para a saudade ter onde dormir, uma luz de projetor para atravessar a distância e um jogo feito à mão em que ela era a heroína. Ela, que sempre cuidou de todos, devolvia o cuidado do seu jeito: um “dormiu bem?” toda manhã, um “bom descanso” toda noite, uma oração e um “eu acredito em você” quando ele mais precisava. E, gesto por gesto, descobriram o que ela sempre disse: o amor não chega pronto. Ele se constrói, com fé, paciência e ação, até virar o lugar onde o coração descansa.</p>
+<div class="btns"><button class="btn" data-play>▶ Assistir</button><button class="btn s" type="button">＋ Minha lista</button></div>
+<div class="sub" style="margin-top:14px;font-style:italic">Baseado em conversas reais.</div>
+</div>
+</section>
+
+<section class="row"><h2>Episódios</h2><div class="cards">
+<button class="c" data-play style="--g:linear-gradient(135deg,#1e3c72,#2a5298)">💬<b>1. Oi<small>Tudo começou com uma mensagem.</small></b></button>
+<button class="c" data-play style="--g:linear-gradient(135deg,#f7971e,#c0392b)">☀️<b>2. Bom dia, linda<small>Mais de 50 manhãs, antes de tudo.</small></b></button>
+<button class="c" data-play style="--g:linear-gradient(135deg,#56ab2f,#1e6b3a)">🎞️<b>3. Um mês em um vídeo<small>Horas de cuidado, só para ela.</small></b></button>
+<button class="c" data-play style="--g:linear-gradient(135deg,#c06c84,#6c5b7b)">🧸<b>4. Um urso, um abraço<small>Para a saudade ter onde dormir.</small></b></button>
+<button class="c" data-play style="--g:linear-gradient(135deg,#41295a,#2f0743)">📽️<b>5. A luz do projetor<small>A luz que chegou de longe.</small></b></button>
+<button class="c" data-play style="--g:linear-gradient(135deg,#0f9b8e,#1e3c72)">🎮<b>6. Feito à mão<small>Um jogo onde ela é a heroína.</small></b></button>
+<button class="c" data-play style="--g:linear-gradient(135deg,#ff9a62,#4a2f7a)">🌅<b>7. Dormiu bem?<small>O cuidado dela, todo dia.</small></b></button>
+<button class="c" data-play style="--g:linear-gradient(135deg,#5b86e5,#36d1dc)">🤍<b>8. Eu acredito em você<small>Quando ele mais precisou.</small></b></button>
+<button class="c" data-play style="--g:linear-gradient(135deg,#0b0f2b,#3a2162)">🌙<b>9. Talking to the Moon<small>A música que os dois amavam.</small></b></button>
+<button class="c" data-play style="--g:linear-gradient(135deg,#ee9ca7,#8e6bbf)">🙏<b>10. Fé e ação<small>Um passo de cada vez.</small></b></button>
+</div></section>
+
+<section class="row"><h2>Em breve</h2><div class="cards">
+<div class="c soon" style="--g:linear-gradient(135deg,#654ea3,#eaafc8)">🤗<b>O primeiro abraço<small>Ainda sem data. Com muita vontade.</small></b></div>
+<div class="c soon" style="--g:linear-gradient(135deg,#0f2027,#2c5364)">🌊<b>Praia à luz da lua<small>Já está no roteiro.</small></b></div>
+<div class="c soon" style="--g:linear-gradient(135deg,#232526,#e50955)">🎬<b>Temporada 2<small>Escrita por nós dois.</small></b></div>
+</div></section>
+<footer>Feito com carinho pelo Bruno, para a Elanie.</footer>
+
+<div id="pl" hidden>
+<canvas id="ci" width="960" height="540"></canvas>
+<canvas id="cf" width="960" height="540" hidden></canvas>
+<div id="cap" aria-live="polite"></div>
+<button id="sk" class="ctl">Pular abertura</button>
+<button id="mu" class="ctl" aria-label="Som">🔊</button>
+<button id="cl" class="ctl" aria-label="Fechar">✕</button>
+<div id="end" hidden>
+<h2 class="d">Fim da 1ª temporada</h2>
+<ul>
+<li>Bruno<i>como ele mesmo</i></li>
+<li>Elanie<i>como a razão do sorriso</i></li>
+<li>O urso<i>o abraço de longe</i></li>
+<li>O projetor<i>a luz da noite</i></li>
+</ul>
+<div class="big">A 2ª temporada é escrita por nós dois.</div>
+<div class="btns" style="justify-content:center"><button class="btn" id="again">↻ Assistir de novo</button><button class="btn s" id="back">Voltar ao início</button></div>
+</div>
+</div>
+
+<script>
+const $=i=>document.getElementById(i);
+const ci=$('ci'),cf=$('cf'),cap=$('cap'),pl=$('pl'),end=$('end');
+const f=cf.getContext('2d');
+let playing=false,mode='',AC=null,muted=false,mi=null,T0=0,lastCap='';
+// estrelas do banner
+(function(){let s='';for(let i=0;i<60;i++)s+='<circle cx="'+(i*263%1600)+'" cy="'+(i*131%520)+'" r="'+(i%4?1.2:2)+'" opacity="'+(.4+(i%5)/8)+'"/>';$('st').innerHTML=s})();
+
+// ---------- áudio (sintetizado, sem arquivos) ----------
+function tone(fq,t,d,v,ty){if(!AC||muted)return;const o=AC.createOscillator(),g=AC.createGain(),l=AC.createBiquadFilter();l.type='lowpass';l.frequency.value=1800;o.type=ty||'sawtooth';o.frequency.value=fq;g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+d*.25);g.gain.exponentialRampToValueAtTime(.0001,t+d);o.connect(l);l.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+d+.05)}
+function fanfare(){const t=AC.currentTime+.1;[[0,[130.8,196,261.6,329.6]],[1.6,[146.8,220,293.7,370]],[3.2,[164.8,246.9,329.6,415.3,493.9]]].forEach(([d,ns])=>ns.forEach(n=>tone(n,t+d,3.6,.05)))}
+function music(){const n=[261.6,329.6,392,493.9,392,329.6,293.7,349.2,440,523.3,440,349.2];let k=0;clearInterval(mi);mi=setInterval(()=>{if(!AC)return;const t=AC.currentTime+.05;tone(n[k%n.length],t,1.4,.05,'triangle');if(k%4==0)tone(n[k%n.length]/2,t,2.4,.03,'sine');k++},500)}
+
+// ---------- abertura estilo estúdio ----------
+const LAND=[[.1,.3,.22,.14],[.3,.55,.16,.2],[.55,.35,.2,.12],[.7,.6,.14,.16],[.9,.25,.12,.1],[.45,.78,.18,.08]];
+function intro(done){
+const c=ci.getContext('2d'),W=960,H=540,t0=performance.now();
+const st=[...Array(140)].map((_,i)=>[(i*97)%W,(i*53)%H,i%3?1:2,i]);
+(function fr(now){
+if(!playing||mode!=='i')return;
+const t=(now-t0)/1000,k=Math.min(1,t/2.4),e=1-Math.pow(1-k,3),r=110+70*e,cx=W/2,cy=H*.52-20*e;
+let g=c.createRadialGradient(cx,cy,20,cx,cy,W*.6);g.addColorStop(0,'#0e2c5e');g.addColorStop(1,'#02030c');c.fillStyle=g;c.fillRect(0,0,W,H);
+st.forEach(s=>{c.globalAlpha=.3+.7*Math.abs(Math.sin(t*1.6+s[3]));c.fillStyle='#fff';c.fillRect(s[0],s[1],s[2],s[2])});c.globalAlpha=1;
+c.save();c.beginPath();c.arc(cx,cy,r,0,7);c.clip();
+g=c.createRadialGradient(cx-r*.4,cy-r*.4,r*.1,cx,cy,r);g.addColorStop(0,'#69b8ff');g.addColorStop(.6,'#1b62c2');g.addColorStop(1,'#06224d');c.fillStyle=g;c.fillRect(cx-r,cy-r,2*r,2*r);
+c.fillStyle='#3f9d55';LAND.forEach(([x,y,a,b])=>{const px=cx-1.5*r+(x*3*r+t*30)%(3*r);c.beginPath();c.ellipse(px,cy-r+y*2*r,a*r*1.4,b*r*1.4,0,0,7);c.fill()});
+g=c.createRadialGradient(cx-r*.5,cy-r*.5,r*.2,cx,cy,r*1.1);g.addColorStop(0,'#0000');g.addColorStop(1,'#000a');c.fillStyle=g;c.fillRect(cx-r,cy-r,2*r,2*r);
+c.restore();
+c.strokeStyle='#bfe0ffaa';c.lineWidth=2;c.beginPath();c.ellipse(cx,cy,r*1.5,r*.26,-.25,0,7);c.stroke();
+const ta=Math.min(1,Math.max(0,(t-2.4)/1.2));
+if(ta>0){c.globalAlpha=ta;c.textAlign='center';c.font='700 64px Georgia,serif';c.letterSpacing='14px';g=c.createLinearGradient(0,cy-10,0,cy+60);g.addColorStop(0,'#fff');g.addColorStop(.5,'#c9d3df');g.addColorStop(1,'#7d8b9c');c.fillStyle=g;c.lineWidth=4;c.strokeStyle='#0a1a3a';c.strokeText('UNIVERSAL',cx,cy+44);c.fillText('UNIVERSAL',cx,cy+44);c.font='600 18px Georgia,serif';c.letterSpacing='18px';c.fillStyle='#dbe6f3';c.fillText('FILMES',cx,cy+78);c.letterSpacing='0px';c.globalAlpha=1}
+if(t>3.2&&t<5){c.globalCompositeOperation='lighter';const fx=cx-300+(t-3.2)*330;g=c.createRadialGradient(fx,cy+30,0,fx,cy+30,70);g.addColorStop(0,'#fff8');g.addColorStop(1,'#fff0');c.fillStyle=g;c.fillRect(fx-70,cy-40,140,140);c.globalCompositeOperation='source-over'}
+const fo=Math.max(0,(t-6.4)/.8);if(fo>0){c.fillStyle='rgba(0,0,0,'+Math.min(1,fo)+')';c.fillRect(0,0,W,H)}
+if(t>7.3){done();return}
+requestAnimationFrame(fr)})(t0)}
+
+// ---------- filme em pixel art ----------
+const R=(x,y,w,h,c)=>{f.fillStyle=c;f.fillRect(Math.round(x),Math.round(y),w,h)};
+const L=(a,b,p)=>a+(b-a)*Math.max(0,Math.min(1,p));
+function sky(a,b){const g=f.createLinearGradient(0,0,0,180);g.addColorStop(0,a);g.addColorStop(1,b);f.fillStyle=g;f.fillRect(0,0,320,180)}
+function stars(t,n){n=n||50;for(let i=0;i<n;i++){f.globalAlpha=.4+.6*Math.abs(Math.sin(t*2+i));R((i*73)%320,(i*41)%90,1,1,'#fff')}f.globalAlpha=1}
+function moon(x,y,r){f.fillStyle='#fff8d833';f.beginPath();f.arc(x,y,r+6,0,7);f.fill();f.fillStyle='#fff8d8';f.beginPath();f.arc(x,y,r,0,7);f.fill()}
+function hill(b,a,fr,o,c){f.fillStyle=c;for(let x=0;x<320;x++){const y=Math.round(b+Math.sin(x*fr+o)*a);f.fillRect(x,y,1,180-y)}}
+function heart(x,y,u,c){['0110110','1111111','1111111','0111110','0011100','0001000'].forEach((r,j)=>{for(let i=0;i<7;i++)if(r[i]==='1')R(x+i*u,y+j*u,u,u,c)})}
+function bird(x,y,t){const a=Math.sin(t*10)>0?0:1;R(x-3,y+a,3,1,'#e8e8ff');R(x,y+a,3,1,'#e8e8ff');R(x-1,y+1-a,2,1,'#e8e8ff')}
+function bub(x,y,m){f.font='9px monospace';f.textAlign='center';const w=f.measureText(m).width+8;R(x-w/2,y-8,w,12,'#fff');R(x-1,y+4,3,2,'#fff');f.fillStyle='#222';f.fillText(m,x,y+1)}
+function P(x,y,w,o){o=o||{};const b=w==='B',fc=o.face||1,s=o.sc||1.3,sk='#ffd9b8',hc=b?'#3a2a1e':'#5a3420',ph=o.walk||0,l=o.walk?Math.sin(ph)*2.5:0,by=y-23*s-(o.walk?Math.abs(Math.cos(ph))*1.2:0),PI=Math.PI;
+f.save();f.translate(x,by);f.scale(fc*s,s);
+if(!b){f.fillStyle=hc;f.beginPath();f.moveTo(-8.6,6);f.lineTo(8.6,6);f.lineTo(9.2,19);f.lineTo(-9.2,19);f.closePath();f.fill()}
+f.fillStyle=sk;f.fillRect(-4+l,19,3,3);f.fillRect(1-l,19,3,3);
+f.fillStyle=b?'#2a2a3a':'#d4527a';f.fillRect(-4.5+l,21.4,4,1.8);f.fillRect(.5-l,21.4,4,1.8);
+f.fillStyle=b?'#4a7bd0':'#ff6f91';f.beginPath();
+if(b)f.rect(-5.4,13,10.8,7);else{f.moveTo(-4.4,13);f.lineTo(4.4,13);f.lineTo(7.4,20.2);f.lineTo(-7.4,20.2)}f.fill();
+f.fillStyle=sk;f.fillRect(-7.2,14,2.2,5);f.fillRect(5,14,2.2,5);
+if(o.reach)f.fillRect(4,14.4,8,2.2);
+f.beginPath();f.arc(0,6.5,7.3,0,7);f.fill();
+f.fillStyle=hc;f.beginPath();f.arc(0,5.4,7.7,PI*1.02,PI*2.05);f.fill();
+if(b){f.beginPath();f.moveTo(-6,2.5);f.lineTo(-1,-3.2);f.lineTo(5,1.5);f.closePath();f.fill()}
+else{f.fillRect(-7.7,4,2.4,7);f.fillRect(5.3,4,2.4,7);f.fillStyle='#e8506f';f.beginPath();f.moveTo(-1.2,-.4);f.lineTo(-6.2,-3.4);f.lineTo(-6.2,2.4);f.closePath();f.fill();f.beginPath();f.moveTo(-1.2,-.4);f.lineTo(3.8,-3.4);f.lineTo(3.8,2.4);f.closePath();f.fill();f.beginPath();f.arc(-1.2,-.4,1.3,0,7);f.fill()}
+const ec=b?'#2f9e44':'#6b3a1e';
+[-2.9,2.9].forEach(ex=>{if(o.close){f.strokeStyle='#3a2030';f.lineWidth=.9;f.beginPath();f.arc(ex,7.6,1.5,PI*1.05,PI*1.95);f.stroke()}
+else{f.fillStyle=ec;f.beginPath();f.arc(ex,6.9,1.6,0,7);f.fill();f.fillStyle='#1c1020';f.beginPath();f.arc(ex,7,.9,0,7);f.fill();f.fillStyle='#fff';f.beginPath();f.arc(ex-.5,6.3,.5,0,7);f.fill()}});
+if(o.sad){f.strokeStyle='#3a2030';f.lineWidth=.8;f.beginPath();f.moveTo(-4.6,4.4);f.lineTo(-1.8,3.4);f.moveTo(1.8,3.4);f.lineTo(4.6,4.4);f.stroke()}
+f.fillStyle=o.blush?'rgba(255,90,120,.7)':'rgba(255,130,150,.4)';f.beginPath();f.arc(-4.9,9.3,1.6,0,7);f.fill();f.beginPath();f.arc(4.9,9.3,1.6,0,7);f.fill();
+f.strokeStyle='#b8304c';f.lineWidth=.9;
+if(o.sad){f.beginPath();f.arc(0,11.2,1.4,PI*1.15,PI*1.85);f.stroke()}
+else if(o.smile){f.fillStyle='#c0394f';f.beginPath();f.arc(0,9.4,1.7,0,PI);f.fill()}
+else{f.beginPath();f.arc(0,9.6,1.5,PI*.15,PI*.85);f.stroke()}
+if(o.cry)for(let i=0;i<2;i++){const d=((o.t||0)*14+i*5)%9;f.fillStyle='#7fd4ff';f.fillRect(-3.4,9+d,1,2.2);f.fillRect(2.6,9+d,1,2.2)}
+f.restore()}
+
+function ted(x,y,k){f.fillStyle='#b9784a';[[x,y,9],[x,y-12,7],[x-6,y-18,3],[x+6,y-18,3]].forEach(a=>{f.beginPath();f.arc(a[0],a[1],a[2]*k,0,7);f.fill()});f.fillStyle='#f0cfa4';f.beginPath();f.arc(x,y-10*k,3*k,0,7);f.fill();R(x-3*k,y-14*k,1.5*k,1.5*k,'#222');R(x+1.6*k,y-14*k,1.5*k,1.5*k,'#222');heart(x-3,y-4,1,'#ff5c8a')}
+const ty=x=>x<=230?172-x*.443:70+(x-230)*.9;
+const S=[
+{d:9,c:[[.5,'Dois mundos, a muitos quilômetros de distância.'],[3.6,'Até que uma mensagem atravessou a noite.'],[6.6,'“Oi.”']],fn:t=>{
+sky('#090d2a','#2b1b4d');stars(t);moon(262,34,12);hill(150,5,.03,0,'#101c30');hill(160,4,.05,2,'#0b1424');
+P(58,150,'B',{face:1,smile:1,t});P(262,150,'E',{face:-1,smile:1,t});
+R(66,134,4,3,'#8fd3ff');R(250,134,4,3,'#ffd6ef');
+['Oi','Bom dia','♥'].forEach((m,i)=>{const p=(t*.18+i/3)%1,x=i==1?L(240,80,p):L(80,240,p);bub(x,108-Math.sin(p*Math.PI)*30,m)})}},
+{d:8,c:[[.4,'Todo dia, antes de tudo, ele era o primeiro a chegar.'],[4,'Mais de 50 manhãs com um “bom dia, linda”.']],fn:t=>{
+sky('#243060','#f7a85c');const p=Math.min(1,t/6);f.fillStyle='#fff1b0';f.beginPath();f.arc(160,152-p*72,20,0,7);f.fill();
+hill(152,5,.03,0,'#2b3d5b');hill(162,4,.05,2,'#1b2a44');
+P(58,152,'B',{face:1,smile:1,t});P(262,152,'E',{face:-1,smile:1,blush:t>3,t});
+for(let i=0;i<3;i++){const q=(t*.3+i/3)%1;bub(L(80,240,q),104-Math.sin(q*Math.PI)*26,'Bom dia ♥')}
+f.font='bold 12px sans-serif';f.textAlign='center';f.fillStyle='#fff';f.fillText('☀️ × '+Math.min(51,Math.floor(t*7)),160,22)}},
+{d:9,c:[[.4,'No primeiro mês, ele passou horas montando um vídeo só para ela.'],[4.6,'Ela escreveu que tinha pedido a Deus um homem romântico.'],[7.2,'E sorriu a noite inteira.']],fn:t=>{
+sky('#0a0f2e','#2b1b4d');stars(t);moon(40,30,10);hill(160,4,.03,1,'#0f1b30');
+P(110,152,'B',{face:1,smile:1,t});P(215,152,'E',{face:-1,smile:1,blush:t>4.6,t});
+for(let i=0;i<4;i++){const p=Math.min(1,Math.max(0,(t-1-i*.8)/1.2)),x=128+i*19,y=L(125,50,p)+Math.sin(t*2+i)*2;f.globalAlpha=p;R(x,y,22,26,'#fff');R(x+2,y+2,18,17,['#7ab8ff','#ffb3c6','#ffd27a','#9be3a0'][i]);heart(x+8,y+7,1,'#fff');f.globalAlpha=1}
+if(t>4.6)heart(158,20+Math.sin(t*4),2,'#ff5c8a')}},
+{d:9,c:[[.4,'Quando a saudade apertou, ele mandou um abraço pelo correio.'],[4.6,'Um urso viajou até ela, para a saudade ter onde dormir.']],fn:t=>{
+sky('#150f33','#3b2a63');stars(t,40);hill(158,4,.03,0,'#171434');const p=Math.min(1,t/3.5);
+P(40,152,'B',{face:1,smile:1,t});
+if(p<1){const x=L(60,230,p),y=125-Math.sin(p*Math.PI)*60;R(x-8,y-8,16,14,'#c8965a');R(x-8,y-2,16,2,'#e9c892');R(x-1,y-8,2,14,'#e9c892')}
+P(232,152,'E',{face:-1,smile:1,blush:t>3.5,close:t>5,t});if(t>3.5){ted(216,146,1);for(let i=0;i<5;i++)heart(205+i*9+Math.sin(t*2+i)*3,120-((t*12+i*17)%50),1,'#ff5c8a')}}},
+{d:10,c:[[.5,'Ele não podia abraçá-la. Então mandou luz.'],[4.5,'E a noite deles virou cinema.'],[7.2,'Mesmo céu. Mesma tela. O mesmo coração.']],fn:t=>{
+sky('#080a24','#241a48');stars(t,60);moon(280,24,9);hill(158,5,.03,1,'#0c1428');
+P(54,152,'B',{face:1,smile:1,t});P(266,152,'E',{face:-1,smile:1,blush:t>4.5,t});R(64,140,6,4,'#cfd8e8');
+f.globalAlpha=.22*Math.min(1,t/1.5);f.fillStyle='#fff3b0';f.beginPath();f.moveTo(70,141);f.lineTo(118,34);f.lineTo(202,34);f.lineTo(262,128);f.closePath();f.fill();f.globalAlpha=1;
+R(116,30,88,46,'#0b0b18');R(116,30,88,1,'#fff3b0');
+const u=Math.round(4+Math.sin(t*3));heart(160-3.5*u,40,u,'#ff5c8a')}},
+{d:10,c:[[.4,'Em vez de usar algo pronto, ele criou à mão, do jeito dele.'],[3.8,'Um site de bom dia. Um jogo onde ela é a heroína.'],[7.2,'E uma sinuca, para jogarem juntos, mesmo longe.']],fn:t=>{
+sky('#0d1330','#241a48');stars(t,40);R(0,150,320,30,'#141a38');
+R(60,96,100,58,'#2a2f55');R(64,100,92,48,'#0b1020');R(100,154,20,4,'#2a2f55');
+for(let i=0;i<5;i++)R(68,105+i*8,Math.min(20+((i*29+Math.floor(t*3))%60),80),2,['#7ee0a0','#ffd27a','#ff9ec4','#8fd3ff','#c9a8ff'][i]);
+P(190,152,'B',{face:-1,smile:1,t});
+if(t<7.2){R(200,24,100,64,'#7ec8ff');R(200,74,100,14,'#5fbf4a');const j=Math.abs(Math.sin(t*4))*12;P(228+((t*14)%40),74-j,'E',{face:1,smile:1,walk:t*10,sc:.7,t});heart(262,40,1,'#ff4f78');heart(280,52,1,'#ff4f78')}
+else{R(200,24,100,64,'#6b3d1e');R(204,28,92,56,'#1f7a4a');[[222,54,'#fff'],[250,58,'#e33'],[262,48,'#ffd23a'],[240,68,'#222']].forEach(a=>R(a[0],a[1],5,5,a[2]));R(206,54+Math.sin(t*5)*3,14,2,'#e9c892')}}},
+{d:10,c:[[.4,'E ela, que sempre cuidou de todos, também cuidava dele.'],[3.6,'“Dormiu bem?” “Como você está?” Em 56 manhãs.'],[6.4,'“Bom descanso. Se cuide. Fique bem.” Em 47 noites.']],fn:t=>{
+const n=t>6.2;sky(n?'#0a0f2e':'#243060',n?'#2b1b4d':'#f7a85c');
+if(n){stars(t);moon(270,28,10)}else{f.fillStyle='#fff1b0';f.beginPath();f.arc(160,118,18,0,7);f.fill()}
+hill(152,5,.03,0,n?'#101c30':'#2b3d5b');
+P(58,152,'B',{face:1,smile:1,close:n,blush:1,t});P(262,152,'E',{face:-1,smile:1,t});
+const tx=n?['Bom descanso','Se cuide','Fique bem ♥']:['Dormiu bem?','Como você está?','Bom dia ♥'];
+tx.forEach((m,i)=>{const q=(t*.22+i/3)%1;bub(L(240,80,q),104-Math.sin(q*Math.PI)*26,m)});
+f.font='bold 12px sans-serif';f.textAlign='center';f.fillStyle='#fff';f.fillText(n?'🌙 × '+Math.min(47,Math.floor((t-6.2)*12)):'☀️ × '+Math.min(56,Math.floor(t*16)),160,20)}},
+{d:10,c:[[.4,'Ela acreditava nele, mesmo nos dias em que ele duvidava.'],[3.4,'“Tenho orgulho de você.”'],[5.6,'“Eu acredito em você.”'],[7.6,'E quando ele quase desistiu, ela ligou.']],fn:t=>{
+sky('#1a1440','#3b2a63');stars(t,50);moon(40,30,9);hill(156,5,.03,1,'#171434');
+const h=t>3.2;P(150,152,'B',{face:1,sad:!h,smile:h,t});P(170,152,'E',{face:-1,smile:1,reach:t>1.5,blush:h,t});
+if(t>3.2&&t<5.6)bub(160,92,'Tenho orgulho de você');
+if(t>5.6&&t<7.6)bub(160,92,'Eu acredito em você');
+if(t>7.6){f.font='14px sans-serif';f.textAlign='center';f.fillStyle='#fff';f.fillText('📞',160+Math.sin(t*30)*2,84)}
+if(h)for(let i=0;i<6;i++)heart(120+i*18+Math.sin(t*2+i)*3,130-((t*10+i*19)%60),1,'#ff5c8a')}},
+{d:13,c:[[.3,'Ela cuidava de todo mundo.'],[3.4,'E a sombra do cansaço chegava cada dia mais perto.'],[6.3,'Até que alguém perguntou: “e você, já comeu?”'],[8.2,'Ele ficou. Ouviu. Rezou por ela. E cuidou de quem sempre cuidou de todos.'],[10.2,'A luz dele afastou a sombra.'],[11.9,'E o caminho apareceu.']],fn:t=>{
+sky('#0b1a14','#16301f');stars(t,25);R(0,128,320,52,'#243628');
+[[24,52,12,100],[78,34,12,100],[134,62,12,90],[196,40,12,100],[252,56,12,100]].forEach(a=>{R(a[0],a[1],a[2],a[3],'#1c5a2c');R(a[0],a[1],a[2],3,'#2f8040')});
+const sa=Math.max(0,Math.min(1,(9-t)/1.2));
+if(sa>0){f.globalAlpha=sa;for(let i=0;i<40;i++)R((i*37+t*50)%320,(i*23+t*120)%140,1,4,'#8fb3ff');R(0,0,320,20,'#161a28');
+const sx=t<7.2?L(285,205,t/7):205+(t-7.2)*45;f.globalAlpha=sa*.4;f.fillStyle='#3a1458';f.beginPath();f.arc(sx,104,48+Math.sin(t*4)*3,0,7);f.fill();
+f.globalAlpha=sa*.95;f.fillStyle='#050309';const sw=Math.sin(t*3)*3;
+f.beginPath();f.moveTo(sx-11,150);f.lineTo(sx-8,92);f.lineTo(sx+8,92);f.lineTo(sx+11,150);f.closePath();f.fill();
+f.beginPath();f.arc(sx,84,10,0,7);f.fill();
+f.beginPath();f.moveTo(sx-8,96);f.lineTo(sx-52+sw,110);f.lineTo(sx-52+sw,114);f.lineTo(sx-6,106);f.fill();
+f.beginPath();f.moveTo(sx-8,106);f.lineTo(sx-46-sw,128);f.lineTo(sx-46-sw,132);f.lineTo(sx-6,116);f.fill();
+for(let j=0;j<6;j++)R(sx-30+j*10+Math.sin(t*4+j)*3,146+j%2*3,8,5,'#0c0716');
+if((t>1.6&&t<1.75)||(t>4.2&&t<4.35)){f.globalAlpha=.4;R(0,0,320,180,'#fff')}f.globalAlpha=1}
+if(t>7.2&&t<10){f.globalAlpha=Math.min(.3,(10-t)/4);f.fillStyle='#ffe9a8';f.beginPath();f.arc(141,128,L(0,95,(t-7.2)/1.5),0,7);f.fill();f.globalAlpha=1}
+for(let i=0;i<14;i++){f.globalAlpha=.5+.5*Math.sin(t*3+i);R((i*47+t*6*(i%3+1))%320,70+(i*29)%70+Math.sin(t*2+i)*4,2,2,'#ffe98a')}f.globalAlpha=1;
+if(t>10){f.globalAlpha=Math.min(1,(t-10)/1.5);R(0,150,320,3,'#ffe9a8');f.globalAlpha=1}
+const wo=t>10.2,sf=wo?L(0,-200,(t-10.2)/2.8):0,bx=t<6.5?L(-20,132,(t-3)/3.5):132+sf,ex=150+sf;
+P(ex,148,'E',{face:-1,cry:t<7,sad:t<7,smile:t>=7,walk:wo?t*10:0,reach:t>6.8&&!wo,t});
+P(bx,148,'B',{face:wo?-1:1,reach:t>6.2&&!wo,walk:((t>3&&t<6.5)||wo)?t*10:0,smile:t>6.2,t});
+if(t>7.2)R(bx+5,137,ex-bx-10,2,'#ffd9b8')}},
+{d:11,c:[[.5,'Tem montanhas que só se sobem de mãos dadas.'],[4.8,'O amor não chega pronto.'],[7.6,'Ele é construído: bom-dia por bom-dia, saudade por saudade.']],fn:t=>{
+sky('#ff9a62','#4a2f7a');f.fillStyle='#ffe7a0';f.beginPath();f.arc(110,70+t*3,22,0,7);f.fill();
+hill(120,12,.02,1,'#6a3f7f');hill(135,10,.03,4,'#4b2d6a');
+for(let x=0;x<320;x++){const y=Math.round(ty(x));R(x,y,1,180-y,'#24173a');R(x,y,1,1,'#ffb27a')}
+const p=Math.min(1,t/9),bx=L(30,214,p),ex=bx-16,w=p<1?t*8:0;
+P(ex,ty(ex),'E',{face:1,smile:1,walk:w,t});P(bx,ty(bx),'B',{face:1,smile:1,walk:w,t});
+R(ex+5,ty(bx-8)-11,bx-ex-10,2,'#ffd9b8')}},
+{d:14,c:[[.4,'Ela tinha uma música favorita. Ele, a mesma.'],[3.2,'“Talking to the Moon”.'],[5.4,'E sob a mesma lua, o silêncio disse tudo.'],[9.2,'Fé e ação.'],[11.4,'Porque o amor é construído.']],fn:t=>{
+sky('#050721','#1a1f4d');stars(t,70);moon(52,46,22);hill(160,4,.02,1,'#0d1230');
+const k=t>5,bx=k?151:L(90,151,t/3),ex=k?169:L(230,169,t/3),w=(!k&&t<3)?t*8:0;
+P(bx,158,'B',{face:1,smile:1,blush:k,close:k,walk:w,t});P(ex,158,'E',{face:-1,smile:1,blush:k,close:k,walk:w,t});
+if(t>5.4)for(let i=0;i<6;i++)heart(160+Math.sin(t*2+i*2)*22,138-((t*14+i*22)%90),1,'#ff5c8a');
+if(t>7){const u=Math.round(9*Math.min(1,(t-7)/1.5));heart(160-3.5*u+40,6,u,'#e50955');
+if(u>=9){f.font='bold 9px sans-serif';f.textAlign='center';f.fillStyle='#fff';f.fillText('Bruno',196,32);f.fillText('& Elanie',196,43)}}
+if(t>9)for(let i=0;i<4;i++)bird(((t-9)*28+i*34)%360-20,70+i*9+Math.sin(t*3+i)*3,t+i)}}
+];
+
+function setCap(x){if(x===lastCap)return;lastCap=x;cap.textContent=x;cap.classList.remove('on');void cap.offsetWidth;if(x)cap.classList.add('on')}
+function film(now){
+if(!playing||mode!=='f')return;
+const tt=(now-T0)/1000;let a=0,i=0;for(;i<S.length;i++){if(tt<a+S[i].d)break;a+=S[i].d}
+if(i>=S.length){setCap('');end.hidden=false;return}
+const t=tt-a,s=S[i];f.textAlign='left';s.fn(t);
+const o=Math.min(1,t/.8,(s.d-t)/.8);f.fillStyle='rgba(0,0,0,'+(1-o)+')';f.fillRect(0,0,320,180);
+let x='';s.c.forEach(c=>{if(t>=c[0])x=c[1]});setCap(x);
+requestAnimationFrame(film)}
+
+function show(m){mode=m;ci.hidden=m!=='i';cf.hidden=m!=='f';$('sk').hidden=m!=='i'}
+function startFilm(){end.hidden=true;lastCap='';f.setTransform(3,0,0,3,0,0);show('f');T0=performance.now();music();requestAnimationFrame(film)}
+function toFilm(){if(mode==='i')startFilm()}
+function play(){playing=true;pl.hidden=false;end.hidden=true;AC=AC||new(window.AudioContext||window.webkitAudioContext)();AC.resume();show('i');fanfare();intro(toFilm)}
+function close(){playing=false;mode='';pl.hidden=true;end.hidden=true;clearInterval(mi);setCap('')}
+document.querySelectorAll('[data-play]').forEach(b=>b.onclick=play);
+$('cl').onclick=close;$('back').onclick=close;$('sk').onclick=toFilm;
+$('again').onclick=startFilm;
+$('mu').onclick=()=>{muted=!muted;$('mu').textContent=muted?'🔇':'🔊'};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&playing)close()});
+</script>
+</body>
+</html>
